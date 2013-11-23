@@ -5,7 +5,7 @@ package moviegenerator;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-//L8 just a comment to test gitHub
+
 /**
  * The Movie class is responsible for one single movie. 
  * @author Lotta Hagborg

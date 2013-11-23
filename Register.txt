@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<register>
+  <movie>
+    <index>1</index>
+    <title>Kalle Banan dansar balett</title>
+    <genre>barn</genre>
+    <director>Nisse Nisseson</director>
+    <minage>7</minage>
+    <length>122</length>
+  </movie>
+  <movie>
+    <index>2</index>
+    <title>Kalle Banan dansar balett</title>
+    <genre>barn</genre>
+    <director>Nisse Nisseson</director>
+    <minage>7</minage>
+    <length>122</length>
+  </movie>
+</register> 
