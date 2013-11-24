@@ -15,21 +15,27 @@ import java.io.IOException;
  *
  * @author lotta
  */
-public class Register {
+public class FileHandler {
     BufferedReader fileHandle;
+    String fileName;
     
-    public Register() {
+    public FileHandler() {
         fileHandle = null;
+        fileName = "";
     }
     
-    public void openFile(String fileName) throws FileNotFoundException {
+    public FileHandler(String name) {
+        fileHandle = null;
+        fileName = name;
+    }
+    
+    public void openFile() throws FileNotFoundException {
         
         try {
             fileHandle = new BufferedReader(new FileReader(fileName));
         }
         catch (FileNotFoundException fnf) {
             System.out.println("Error message catched: " + fnf.getMessage());
-            fileHandle = null;
             throw new FileNotFoundException();
         }
     }
@@ -46,6 +52,10 @@ public class Register {
     
     public BufferedReader getFile() {
         return fileHandle;
+    }
+    
+    public String getFileName() {
+        return fileName;
     }
     
 }
