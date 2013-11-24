@@ -21,9 +21,10 @@ import java.io.IOException;
  * @author lotta
  */
 public class XMLParser extends DefaultHandler {
-    static String xmlFile;
-    static MovieList listOfMovies;
-    String tmpValue;
+    private final String xmlFile;
+    private final MovieList listOfMovies;
+    private Movie tmpMovie;
+    private String tmpValue;
     
     public XMLParser() {
         xmlFile = "";
@@ -58,41 +59,45 @@ public class XMLParser extends DefaultHandler {
         // if current element is movie , create new movie
         // clear tmpValue on start of element
         if (elementName.equalsIgnoreCase("movie")) {
-            
+            tmpMovie = new Movie(); 
         }
     }
     
     @Override
     public void endElement(String s, String s1, String element) throws SAXException {
         
-        String tmpAgeS = "";
-        String tmpLengthS = "";
-        String tmpTitle = "";
-        String tmpGenre = "";
-        String tmpDirector = "";
-        int    tmpAgeI = 0;
-        int    tmpLengthI = 0;
+        String tmpAgeS;
+        String tmpLengthS;
+        String tmpTitle;
+        String tmpGenre;
+        String tmpDirector;
+        int    tmpAgeI;
+        int    tmpLengthI;
         
         if (element.equalsIgnoreCase("title")) {
             tmpTitle = tmpValue;
+            tmpMovie.setTitle(tmpTitle);
         }
         if (element.equalsIgnoreCase("genre")) {
             tmpGenre = tmpValue;
+            tmpMovie.setGenre(tmpGenre);
         }
         if (element.equalsIgnoreCase("director")) {
             tmpDirector = tmpValue;
+            tmpMovie.setDirector(tmpDirector);
         }
         if (element.equalsIgnoreCase("age")) {
             tmpAgeS = tmpValue;
             tmpAgeI = Integer.parseInt(tmpAgeS);
+            tmpMovie.setAge(tmpAgeI);
         }
         if (element.equalsIgnoreCase("time")) {
             tmpLengthS = tmpValue;
             tmpLengthI = Integer.parseInt(tmpLengthS);
+            tmpMovie.setTime(tmpLengthI);
         }
         if (element.equals("movie")) {
-           listOfMovies.addMovie(tmpTitle, tmpGenre, tmpDirector, tmpAgeI,
-                    tmpLengthI); 
+            listOfMovies.addMovieObject(tmpMovie); 
         }
     }
 
@@ -100,5 +105,4 @@ public class XMLParser extends DefaultHandler {
     public void characters(char[] ac, int i, int j) throws SAXException {
         tmpValue = new String(ac, i, j);
     }
-
 }

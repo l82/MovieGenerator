@@ -159,7 +159,7 @@ public class MovieMenu {
         XMLParser docToParse;
        
         docToParse = new XMLParser("Register.xml"); 
-        myMovieList = docToParse.parseDocument(); //Kansle inte så vackert?
+        myMovieList = docToParse.parseDocument(); //Inte så vackert tycker jag!
     }
     
     /**

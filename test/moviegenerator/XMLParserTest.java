@@ -61,10 +61,14 @@ public class XMLParserTest {
     public void testParseDocument() {
         XMLParser docToParse;
         MovieList list;
+        String formatting = "%-10s%-50s%-30s%-30s%-10s%-10s";
        
         docToParse = new XMLParser(testFileName); 
         list = docToParse.parseDocument();
         System.out.println("Number of movies: " + list.getNumberOfMovies());
+        System.out.println(String.format(formatting, "Movie No", "Title", "Genre", 
+                "Director", "Min Age", "Time(min)"));
+        System.out.println(list.movieListToString(formatting));
     }
     
 }

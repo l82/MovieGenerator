@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Laptop-hemma" name="moviegenerator.MovieTest" skipped="0" tests="7" time="0.096" timestamp="2013-11-24T16:21:02">
+<testsuite errors="0" failures="0" hostname="Laptop-hemma" name="moviegenerator.MovieTest" skipped="0" tests="7" time="0.101" timestamp="2013-11-24T17:00:51">
   <properties>
     <property name="netbeans.autoupdate.country" value="GB" />
     <property name="nb.wait.for.caches" value="true" />
@@ -41,7 +41,7 @@
     <property name="user.name" value="lotta" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner moviegenerator.MovieTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\Git\l8GitRepositories\MovieGenerator\build\test\results\TEST-moviegenerator.MovieTest.xml crashfile=D:\Git\l8GitRepositories\MovieGenerator\build\junitvmwatcher8753754359139682437.properties propsfile=D:\Git\l8GitRepositories\MovieGenerator\build\junit8189247839410834314.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner moviegenerator.MovieTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\Git\l8GitRepositories\MovieGenerator\build\test\results\TEST-moviegenerator.MovieTest.xml crashfile=D:\Git\l8GitRepositories\MovieGenerator\build\junitvmwatcher3478883757180582517.properties propsfile=D:\Git\l8GitRepositories\MovieGenerator\build\junit2261865885848902462.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -181,6 +181,7 @@
     <property name="meta.inf.dir" value="src/META-INF" />
     <property name="javadoc.encoding.used" value="UTF-8" />
     <property name="dist.jar" value="dist/MovieGenerator.jar" />
+    <property name="netbeans.automatic.build" value="true" />
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
     <property name="ant.project.name" value="MovieGenerator" />
     <property name="netbeans.hash.code" value="unique=NB_EXTIDE_JAVA0bad40357-c1ac-40d3-9c70-546e8eb8e86e_1700eb67-deb6-49dd-b474-c1ed452ed63c" />
@@ -285,8 +286,8 @@
     <property name="run.jvmargs" value="" />
     <property name="libs.ejb3-persistence.classpath" value="D:\NetBeans 7.4\java\modules\ext\hibernate\hibernate-jpa-2.0-api-1.0.1.Final.jar" />
     <property name="libs.hibernate-persistencemodelgen.javadoc" value="" />
-    <property name="dist.archive.excludes" value="" />
     <property name="libs.spring-framework.javadoc" value="" />
+    <property name="dist.archive.excludes" value="" />
     <property name="libs.JAXB-ENDORSED.src" value="" />
     <property name="libs.testng.javadoc" value="D:\NetBeans 7.4\platform\docs\testng-6.8.1-javadoc.zip" />
     <property name="user.script" value="" />
@@ -297,27 +298,27 @@
     <property name="libs.CopyLibs.src" value="" />
     <property name="build.dir" value="build" />
     <property name="ant.version" value="Apache Ant(TM) version 1.9.1 compiled on May 15 2013" />
-    <property name="build.classes.excludes" value="**/*.java,**/*.form" />
     <property name="file.encoding" value="Cp1252" />
+    <property name="build.classes.excludes" value="**/*.java,**/*.form" />
     <property name="jdkBug6558476" value="false" />
     <property name="javadoc.nonavbar" value="false" />
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
   </properties>
-  <testcase classname="moviegenerator.MovieTest" name="testSetTime" time="0.003" />
-  <testcase classname="moviegenerator.MovieTest" name="testGetAge" time="0.0" />
+  <testcase classname="moviegenerator.MovieTest" name="testGetDirector" time="0.002" />
+  <testcase classname="moviegenerator.MovieTest" name="testSetTime" time="0.001" />
+  <testcase classname="moviegenerator.MovieTest" name="testGetAge" time="0.001" />
   <testcase classname="moviegenerator.MovieTest" name="testGetTime" time="0.0" />
   <testcase classname="moviegenerator.MovieTest" name="testGetGenre" time="0.0" />
-  <testcase classname="moviegenerator.MovieTest" name="testGetTitle" time="0.0" />
+  <testcase classname="moviegenerator.MovieTest" name="testGetTitle" time="0.001" />
   <testcase classname="moviegenerator.MovieTest" name="testSetTitle" time="0.0" />
-  <testcase classname="moviegenerator.MovieTest" name="testGetDirector" time="0.0" />
-  <system-out><![CDATA[setTime
+  <system-out><![CDATA[getDirector
+setTime
 getAge
 getTime
 getGenre
 getTitle
 setTitle
-getDirector
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

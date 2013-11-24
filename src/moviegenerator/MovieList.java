@@ -62,6 +62,17 @@ public class MovieList {
  
     }
     
+     /** 
+     * Adds a movie into list
+     * 
+     * @param object        The object to be added
+     */
+    public void addMovieObject(Movie object) {
+        
+        myMovies.add(object);
+ 
+    }
+    
     /** 
      * Removes a movie from the list
      * 

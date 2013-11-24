@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Laptop-hemma" name="moviegenerator.FileHandlerTest" skipped="0" tests="3" time="0.1" timestamp="2013-11-24T16:21:01">
+<testsuite errors="0" failures="0" hostname="Laptop-hemma" name="moviegenerator.FileHandlerTest" skipped="0" tests="3" time="0.102" timestamp="2013-11-24T17:00:50">
   <properties>
     <property name="netbeans.autoupdate.country" value="GB" />
     <property name="nb.wait.for.caches" value="true" />
@@ -41,7 +41,7 @@
     <property name="user.name" value="lotta" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner moviegenerator.FileHandlerTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\Git\l8GitRepositories\MovieGenerator\build\test\results\TEST-moviegenerator.FileHandlerTest.xml crashfile=D:\Git\l8GitRepositories\MovieGenerator\build\junitvmwatcher9167520791827377395.properties propsfile=D:\Git\l8GitRepositories\MovieGenerator\build\junit7378269653363657566.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner moviegenerator.FileHandlerTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\Git\l8GitRepositories\MovieGenerator\build\test\results\TEST-moviegenerator.FileHandlerTest.xml crashfile=D:\Git\l8GitRepositories\MovieGenerator\build\junitvmwatcher6764523976751847985.properties propsfile=D:\Git\l8GitRepositories\MovieGenerator\build\junit3518178511931794995.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -181,6 +181,7 @@
     <property name="meta.inf.dir" value="src/META-INF" />
     <property name="javadoc.encoding.used" value="UTF-8" />
     <property name="dist.jar" value="dist/MovieGenerator.jar" />
+    <property name="netbeans.automatic.build" value="true" />
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
     <property name="ant.project.name" value="MovieGenerator" />
     <property name="netbeans.hash.code" value="unique=NB_EXTIDE_JAVA0bad40357-c1ac-40d3-9c70-546e8eb8e86e_1700eb67-deb6-49dd-b474-c1ed452ed63c" />
@@ -285,8 +286,8 @@
     <property name="run.jvmargs" value="" />
     <property name="libs.ejb3-persistence.classpath" value="D:\NetBeans 7.4\java\modules\ext\hibernate\hibernate-jpa-2.0-api-1.0.1.Final.jar" />
     <property name="libs.hibernate-persistencemodelgen.javadoc" value="" />
-    <property name="dist.archive.excludes" value="" />
     <property name="libs.spring-framework.javadoc" value="" />
+    <property name="dist.archive.excludes" value="" />
     <property name="libs.JAXB-ENDORSED.src" value="" />
     <property name="libs.testng.javadoc" value="D:\NetBeans 7.4\platform\docs\testng-6.8.1-javadoc.zip" />
     <property name="user.script" value="" />
@@ -297,14 +298,14 @@
     <property name="libs.CopyLibs.src" value="" />
     <property name="build.dir" value="build" />
     <property name="ant.version" value="Apache Ant(TM) version 1.9.1 compiled on May 15 2013" />
-    <property name="build.classes.excludes" value="**/*.java,**/*.form" />
     <property name="file.encoding" value="Cp1252" />
+    <property name="build.classes.excludes" value="**/*.java,**/*.form" />
     <property name="jdkBug6558476" value="false" />
     <property name="javadoc.nonavbar" value="false" />
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
   </properties>
-  <testcase classname="moviegenerator.FileHandlerTest" name="copyFile" time="0.006" />
+  <testcase classname="moviegenerator.FileHandlerTest" name="copyFile" time="0.007" />
   <testcase classname="moviegenerator.FileHandlerTest" name="testFileOpen" time="0.002" />
   <testcase classname="moviegenerator.FileHandlerTest" name="getFileName" time="0.002" />
   <system-out><![CDATA[setUp
