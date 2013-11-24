@@ -68,7 +68,10 @@ public class XMLWriter {
             timeS = String.valueOf(movie.getTime());
             writer.writeCharacters(timeS);
             writer.writeEndElement();
+            writer.writeStartElement("customer");
+            writer.writeCharacters(movie.getCustomer());
             writer.writeEndElement(); 
+            writer.writeEndElement();
         }
     }
     

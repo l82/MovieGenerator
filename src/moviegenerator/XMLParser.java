@@ -104,6 +104,7 @@ public class XMLParser extends DefaultHandler {
         String tmpTitle;
         String tmpGenre;
         String tmpDirector;
+        String tmpCustomer;
         int    tmpAgeI;
         int    tmpLengthI;
         
@@ -128,6 +129,12 @@ public class XMLParser extends DefaultHandler {
             tmpLengthS = tmpValue;
             tmpLengthI = Integer.parseInt(tmpLengthS);
             tmpMovie.setTime(tmpLengthI);
+        }
+
+        if (element.equalsIgnoreCase("customer")) {
+            tmpCustomer = tmpValue;
+            System.out.println(tmpCustomer);
+            tmpMovie.setCustomer(tmpCustomer);
         }
         if (element.equals("movie")) {
             listOfMovies.addMovieObject(tmpMovie); 

@@ -39,6 +39,8 @@ public class MovieMenu {
         System.out.println("1. Watch list of Movies");
         System.out.println("2. Add a Movie");
         System.out.println("3. Remove a Movie");
+        System.out.println("4. Rent movie to a customer");
+        System.out.println("5. Stop renting a movie");
         System.out.println("----------------------------------");
         System.out.println("9. Exit");
         System.out.print("Enter your choice: ");
@@ -48,7 +50,7 @@ public class MovieMenu {
      * Get user input when user should add an integer
      * @return The chosen integer value
      */
-    public int getNumber() { 
+    private int getNumber() { 
         Scanner myScanner = new Scanner(System.in);
         int choice = myScanner.nextInt();
         return choice;
@@ -170,11 +172,11 @@ public class MovieMenu {
      * Prints header and all movies
      */
     private void printMovieList() {
-        String formatting = "%-10s%-50s%-30s%-30s%-10s%-10s";
+        String formatting = "%-10s%-40s%-30s%-30s%-10s%-10s%-20s";
         System.out.println("Number of movies in list: " + 
                 myMovieList.getNumberOfMovies());
         System.out.println(String.format(formatting, "Movie No", "Title", "Genre", 
-                "Director", "Min Age", "Time(min)"));
+                "Director", "Min Age", "Time(min)", "Customer"));
         System.out.println(myMovieList.movieListToString(formatting));
         printBackExitMenu();
     }
@@ -191,6 +193,30 @@ public class MovieMenu {
         return movieToRemove;
     }
     
+     /** 
+     * Asks for title of movie to rent
+     * @return The number of the movie to rent
+     */
+    private int askAndGetMovieToRent() {
+        int movieToRent;
+        
+        printString("Enter movie number to rent: ");
+        movieToRent = getNumber();
+        return movieToRent;
+    }
+    
+    /** 
+     * Asks for title of movie to stop renting
+     * @return The number of the movie to rent
+     */
+    private int askAndGetMovieToStopRent() {
+        int movieToStopRent;
+        
+        printString("Enter movie number to stop renting: ");
+        movieToStopRent = getNumber();
+        return movieToStopRent;
+    }
+    
     /**
      * Prints the dialog for removing a movie and deletes it
      */
@@ -201,6 +227,49 @@ public class MovieMenu {
         int movieToRemove = askAndGetMovieToRemove();
         removedMovie = myMovieList.removeMovie(movieToRemove);
         System.out.println("Removed movie: " + removedMovie);
+        printBackExitMenu();
+    }
+    
+    /** 
+     * Asks for the customer
+     * @return The name of the customer
+     */
+    private String askForCustomer() {
+        String customer;
+        
+        printString("Enter customer to rent movie: ");
+        customer = getStringChoice();
+        return customer;
+    }
+    
+    /**
+     * Prints the dialog for renting a movie
+     */
+    private void rentMovie() {
+        int rentMovie;
+        String customer;
+        String title;
+        
+        printMovieList();
+        rentMovie = askAndGetMovieToRent();
+        customer = askForCustomer();
+        title = myMovieList.addRemoveCustomer(rentMovie, customer);
+        System.out.println("Customer: " + customer + " rented movie " + 
+                title);
+        printBackExitMenu();
+    }
+    
+    /**
+     * Prints the dialog for stop renting a movie
+     */
+    private void stopRentMovie() {
+        int rentMovie;
+        String title;
+        
+        printMovieList();
+        rentMovie = askAndGetMovieToStopRent();
+        title = myMovieList.addRemoveCustomer(rentMovie, "");
+        System.out.println("Movie " + title + "is no longer rented");
         printBackExitMenu();
     }
     
@@ -221,6 +290,15 @@ public class MovieMenu {
                 break;
             case 3:
                 removeMovie();
+                break;
+            case 4:
+                rentMovie();
+                break;
+            case 5:
+                stopRentMovie();
+                break;
+            case 6:
+                //listMoviesForCustomer();
                 break;
             case 9:
                 exitProgram();

@@ -94,6 +94,28 @@ public class MovieList {
         }
         return movieTitle;
     }
+     
+     /** 
+     * Adds and remove customer to/from a movie in list
+     * 
+     * @param movieNo   The movie number to be rented. Note! This parameter 
+     * should not be the list number but the number as the user see (number in 
+     * list + 1)
+     * @param customer Name of customer to add
+     * @return The title of the rented movie
+     */
+     public String addRemoveCustomer(int movieNo, String customer) {
+        
+        Movie movieToRent;
+        String movieTitle = null;
+        movieToRent= myMovies.get((movieNo - 1));
+        
+        if (movieToRent != null) {
+            movieTitle = movieToRent.getTitle();
+            movieToRent.setCustomer(customer);
+        }
+        return movieTitle;
+    }
     
     /**
      * Get the movie object belonging to a certain position in movieList
@@ -103,7 +125,7 @@ public class MovieList {
     public Movie getMovieNo(int position) {
         
         Movie movie;
-        movie = myMovies.get((position));
+        movie = myMovies.get(position);
         return movie;
     }
     

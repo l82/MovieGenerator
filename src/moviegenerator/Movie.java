@@ -22,6 +22,8 @@ public class Movie {
     private String director;
     /** Minimum age required to see the movie */
     private int age;
+    /** Customer who has rented the movie */
+    private String customer;
     
     /** Constructor used for a dummy movie */
     public Movie() {
@@ -30,6 +32,7 @@ public class Movie {
         title = "no title";
         genre = "no genre";
         director = "no director";
+        customer = "";
     }
     
     /** Constructor used for initiate a movie with "real" data
@@ -50,6 +53,7 @@ public class Movie {
         title = mTitle;
         genre = mGenre;
         director = mDirector;
+        customer = "";
     }  
 
     /**
@@ -93,6 +97,14 @@ public class Movie {
     }
     
     /**
+     * Getter to get the customer who has rented the file
+     * @return The age
+     */
+    public String getCustomer() {
+        return customer;
+    }
+    
+    /**
      * Setter to set the time a movie will last
      * @param time The time to set
      */
@@ -133,6 +145,14 @@ public class Movie {
     }
     
     /**
+     * Setter to set the customer that has rented the movie
+     * @param customer The age to set
+     */
+    public void setCustomer(String customer) {
+        this.customer = customer;
+    }
+    
+    /**
      * Format a string with information about the movie starting with a number
      * 
      * @param movieNo The number to print for the movie
@@ -141,7 +161,8 @@ public class Movie {
      */
     public String printMovie(int movieNo, String formatting) {
         return  String.format(formatting, movieNo,
-                this.title, this.genre, this.director, this.age, this.time);
+                this.title, this.genre, this.director, this.age, this.time,
+                this.customer);
     }
     
     /**
@@ -153,7 +174,7 @@ public class Movie {
         String movie;
         
         movie = this.title + ";" + this.genre + ";" + this.director + ";" + 
-                this.age + ";" + this.time;
+                this.age + ";" + this.time + ";" + this.customer;
         return movie;
     }
 }
