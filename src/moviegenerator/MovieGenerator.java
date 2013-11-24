@@ -19,7 +19,7 @@ public class MovieGenerator {
      */
     public static void main(String[] args) {
         
-        MovieMenu menu = new MovieMenu();
+        MovieMenu menu = new MovieMenu("Register.xml");
         
     }
     

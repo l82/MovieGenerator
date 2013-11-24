@@ -17,10 +17,12 @@ public class MovieMenu {
     
     /** ArrayList used to store references to the movies */
     private MovieList myMovieList;
+    private String xmlFile;
     
     /** Constructor used for a dummy movie */
-    public MovieMenu() {
+    public MovieMenu(String fileName) {
         myMovieList = new MovieList();
+        xmlFile = fileName;
         initiateMovies();
         menuLoop();
     }
@@ -158,7 +160,7 @@ public class MovieMenu {
     private void initiateMovies() {
         XMLParser docToParse;
        
-        docToParse = new XMLParser("Register.xml"); 
+        docToParse = new XMLParser(xmlFile); 
         myMovieList = docToParse.parseDocument(); //Inte så vackert tycker jag!
     }
     
@@ -233,7 +235,7 @@ public class MovieMenu {
      */
     private void exitProgram() {
         
-        XMLWriter instance = new XMLWriter("Register.xml");
+        XMLWriter instance = new XMLWriter(xmlFile);
         instance.writeToFile(myMovieList);
         System.exit(0);
     }
