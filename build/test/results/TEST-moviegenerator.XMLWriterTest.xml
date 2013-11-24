@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Laptop-hemma" name="moviegenerator.MovieTest" skipped="0" tests="7" time="0.099" timestamp="2013-11-24T18:51:39">
+<testsuite errors="0" failures="0" hostname="Laptop-hemma" name="moviegenerator.XMLWriterTest" skipped="0" tests="1" time="0.116" timestamp="2013-11-24T18:51:41">
   <properties>
     <property name="netbeans.autoupdate.country" value="GB" />
     <property name="nb.wait.for.caches" value="true" />
@@ -41,7 +41,7 @@
     <property name="user.name" value="lotta" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner moviegenerator.MovieTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\Git\l8GitRepositories\MovieGenerator\build\test\results\TEST-moviegenerator.MovieTest.xml crashfile=D:\Git\l8GitRepositories\MovieGenerator\build\junitvmwatcher6979919888163245044.properties propsfile=D:\Git\l8GitRepositories\MovieGenerator\build\junit4872336352741024091.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner moviegenerator.XMLWriterTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\Git\l8GitRepositories\MovieGenerator\build\test\results\TEST-moviegenerator.XMLWriterTest.xml crashfile=D:\Git\l8GitRepositories\MovieGenerator\build\junitvmwatcher7014081353735918368.properties propsfile=D:\Git\l8GitRepositories\MovieGenerator\build\junit2715756309944447084.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -304,20 +304,8 @@
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
   </properties>
-  <testcase classname="moviegenerator.MovieTest" name="testGetDirector" time="0.003" />
-  <testcase classname="moviegenerator.MovieTest" name="testSetTime" time="0.0" />
-  <testcase classname="moviegenerator.MovieTest" name="testGetAge" time="0.0" />
-  <testcase classname="moviegenerator.MovieTest" name="testGetTime" time="0.0" />
-  <testcase classname="moviegenerator.MovieTest" name="testGetGenre" time="0.001" />
-  <testcase classname="moviegenerator.MovieTest" name="testGetTitle" time="0.001" />
-  <testcase classname="moviegenerator.MovieTest" name="testSetTitle" time="0.0" />
-  <system-out><![CDATA[getDirector
-setTime
-getAge
-getTime
-getGenre
-getTitle
-setTitle
+  <testcase classname="moviegenerator.XMLWriterTest" name="testWriteToFile" time="0.024" />
+  <system-out><![CDATA[writeToFile
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -232,6 +232,9 @@ public class MovieMenu {
      * Exits the program
      */
     private void exitProgram() {
+        
+        XMLWriter instance = new XMLWriter("Register.xml");
+        instance.writeToFile(myMovieList);
         System.exit(0);
     }
     

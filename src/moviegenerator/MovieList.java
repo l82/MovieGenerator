@@ -95,6 +95,18 @@ public class MovieList {
     }
     
     /**
+     * 
+     * @param movieId     Id in movie array
+     * @return 
+     */
+    public Movie getMovieNo(int movieId) {
+        
+        Movie movie;
+        movie = myMovies.get((movieId));
+        return movie;
+    }
+    
+    /**
      * Returns the number of movies in the list
      * @return The current number of movies
      */
