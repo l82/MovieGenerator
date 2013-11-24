@@ -30,8 +30,9 @@ public class MovieList {
      */
     public String movieListToString(String format) {
         Movie movieToPrint;
-        String movieToString = "";
-        String concatMovieList = "";
+        String movieToString;
+        String concatMovieList;
+        concatMovieList = "";
         
         for (int i = 0; i < myMovies.size(); i++) {
             movieToPrint = myMovies.get(i);
@@ -62,7 +63,7 @@ public class MovieList {
  
     }
     
-     /** 
+    /** 
      * Adds a movie into list
      * 
      * @param object        The object to be added
@@ -95,14 +96,14 @@ public class MovieList {
     }
     
     /**
-     * 
-     * @param movieId     Id in movie array
-     * @return 
+     * Get the movie object belonging to a certain position in movieList
+     * @param position     Id in movie array
+     * @return The movie object belonging to that position
      */
-    public Movie getMovieNo(int movieId) {
+    public Movie getMovieNo(int position) {
         
         Movie movie;
-        movie = myMovies.get((movieId));
+        movie = myMovies.get((position));
         return movie;
     }
     

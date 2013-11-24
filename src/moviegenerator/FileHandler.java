@@ -16,23 +16,34 @@ import java.nio.file.Paths;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
 /**
- *
- * @author lotta
+ * The file handler is responsible for opening and closing files and to handle
+ * errors when file not found etc. This is a layer between MovieGenerator and
+ * file system.
+ * @author Lotta Hagborg
  */
 public class FileHandler {
+    
+    /** Reader for file */
     BufferedReader fileHandle;
+    /** File name to read from */
     String fileName;
     
+    /** Dummy constructor for file handler */
     public FileHandler() {
         fileHandle = null;
         fileName = "";
     }
     
+    /** Constructor which initiates fileName to use */
     public FileHandler(String name) {
         fileHandle = null;
         fileName = name;
     }
     
+    /**
+     * Opens the file chosen in constructor
+     * @throws FileNotFoundException 
+     */
     public void openFile() throws FileNotFoundException {
         
         try {
@@ -44,6 +55,9 @@ public class FileHandler {
         }
     }
     
+    /**
+     * Closes the file that is chosen in constructor
+     */
     public void closeFile() {
         
         try {
@@ -54,14 +68,29 @@ public class FileHandler {
         }
     }
     
+    /**
+     * Gets the BufferedReader for file that was opened in openFile 
+     * @return The handle to the BufferedReader
+     */
     public BufferedReader getFile() {
         return fileHandle;
     }
     
+    /**
+     * Gets the name of the file provided in constructor 
+     * @return The name of the file
+     */
     public String getFileName() {
         return fileName;
     }
     
+    /**
+     * Copies one file to another and overwrites the file to copy to if file 
+     * already exists
+     * @param fromFileName File name to copy from
+     * @param toFileName File name to copy to
+     * @throws IOException 
+     */
     public void copyFile (String fromFileName, 
                           String toFileName) throws IOException{
         Path FROM = Paths.get(fromFileName);

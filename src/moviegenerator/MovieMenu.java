@@ -17,9 +17,11 @@ public class MovieMenu {
     
     /** ArrayList used to store references to the movies */
     private MovieList myMovieList;
-    private String xmlFile;
+    private final String xmlFile;
     
-    /** Constructor used for a dummy movie */
+    /** Constructor used for a dummy movie 
+     * @param fileName    Name of file where register is saved
+     */
     public MovieMenu(String fileName) {
         myMovieList = new MovieList();
         xmlFile = fileName;

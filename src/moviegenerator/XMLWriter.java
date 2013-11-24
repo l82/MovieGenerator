@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.FileWriter;
 
 /**
+ * The XMLWriter class is responsible for writing movieList to XML file
  * Example used quite a lot to figure out how this should be done:
  * http://www.java2s.com/Code/Java/JDK-6/XMLStreamWriterDemo.htm
  * 
@@ -21,16 +22,25 @@ import java.io.FileWriter;
  */
 public class XMLWriter {
     
-    private String xmlFile;
+    /** xmlFile to write to */
+    private final String xmlFile;
     
-     public XMLWriter() {
+    /** Dummy constructor */
+    public XMLWriter() {
         xmlFile = "";
     }
     
+    /** Constructor that intiates the file name to write to */
     public XMLWriter(String fileName) {
         xmlFile = fileName;
     }
     
+    /**
+     * Loops through the movieList and writes the objects to the buffer
+     * @param writer Buffer for XML data
+     * @param list MovieList to buffer
+     * @throws XMLStreamException 
+     */
     private void writeMovies(XMLStreamWriter writer,
             MovieList list) throws XMLStreamException {
         
@@ -62,6 +72,10 @@ public class XMLWriter {
         }
     }
     
+    /**
+     * Write the header for XML data
+     * @param writer XML buffer to write to
+    */
     private void createXmlHeader(XMLStreamWriter writer) {
         try {
             writer.writeStartDocument("1.0");
@@ -72,6 +86,10 @@ public class XMLWriter {
         }
     }
     
+    /**
+     * Writes XML data to the file provided in constructor
+     * @param list MovieList to print to file
+     */
     public void writeToFile(MovieList list) {
     
         XMLOutputFactory factory = XMLOutputFactory.newInstance();
@@ -90,4 +108,3 @@ public class XMLWriter {
         }
     }
 }
-    
