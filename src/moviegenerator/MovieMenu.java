@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class MovieMenu {
     
     /** ArrayList used to store references to the movies */
-    private final MovieList myMovieList;
+    private MovieList myMovieList;
     
     /** Constructor used for a dummy movie */
     public MovieMenu() {
@@ -156,10 +156,10 @@ public class MovieMenu {
      * Initiates some default movies
      */
     private void initiateMovies() {
-        myMovieList.addMovie("Kalle banan dansar vals", "barn", 
-                "Lars Larsson", 7, 102);
-        myMovieList.addMovie("Pelle Plutsson jagar tjuvar", "deckare", 
-                "Pelle Pellesson", 11, 132);
+        XMLParser docToParse;
+       
+        docToParse = new XMLParser("Register.xml"); 
+        myMovieList = docToParse.parseDocument(); //Kansle inte så vackert?
     }
     
     /**

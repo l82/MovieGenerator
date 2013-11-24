@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<register>
+  <movie>
+    <title>Kalle Banan dansar balett 2</title>
+    <genre>barn</genre>
+    <director>Nisse Nisseson</director>
+    <age>7</age>
+    <time>122</time>
+  </movie>
+  <movie>
+    <title>Nicke Nyfiken</title>
+    <genre>barn</genre>
+    <director>Nicke Nickesson</director>
+    <age>3</age>
+    <time>110</time>
+  </movie>
+</register> 

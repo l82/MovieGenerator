@@ -10,6 +10,10 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
 /**
  *
@@ -56,6 +60,20 @@ public class FileHandler {
     
     public String getFileName() {
         return fileName;
+    }
+    
+    public void copyFile (String fromFileName, 
+                          String toFileName) throws IOException{
+        Path FROM = Paths.get(fromFileName);
+        Path TO = Paths.get(toFileName);
+       
+        try {
+            Files.copy(FROM, TO, REPLACE_EXISTING);
+        } 
+        catch (IOException ioe) {
+            System.out.println("Error message catched: " + ioe.getMessage());
+            throw new IOException();
+        }
     }
     
 }

@@ -19,14 +19,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.io.FileNotFoundException; 
-import static java.nio.file.StandardCopyOption.*;
-import java.io.File;
-import java.nio.file.Files;
 import java.io.IOException;
-import java.nio.file.CopyOption;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 /**
  *
  * @author lotta
@@ -41,17 +34,6 @@ public class FileHandlerTest {
         testFileName = "";
     }
     
-    static void copyFile (String fromFileName, String toFileName) {
-        Path FROM = Paths.get(fromFileName);
-        Path TO = Paths.get(toFileName);
-       
-        try {
-            Files.copy(FROM, TO, REPLACE_EXISTING);
-        } 
-        catch (IOException ioe) {
-            fail("Could not copy file");
-        }
-    }
     
     @BeforeClass
     public static void setUpClass() {
@@ -65,15 +47,18 @@ public class FileHandlerTest {
     @Before
     public void setUp() {
         
-        String toFileName = "TestRegister.txt";
-        String fromFileName = "Register.txt";
-        testFileName = toFileName;    
-        
-        copyFile(fromFileName, toFileName);
-        
+        String toFileName = "TestRegister.xml";
+        String fromFileName = "Register.xml";
+        testFileName = toFileName;
         instance = new FileHandler(toFileName);
-            
+        
         System.out.println("setUp");
+        try {
+            instance.copyFile(fromFileName, toFileName);
+        }
+        catch (IOException ioe) {
+            fail("Should not have raised a IO exception");
+        }
         
         try {
             instance.openFile();
@@ -100,7 +85,7 @@ public class FileHandlerTest {
        
         FileHandler fileToTest;
         
-        fileToTest = new FileHandler("Kalle.txt");
+        fileToTest = new FileHandler("Kalle.xml");
         
         try {
             fileToTest.openFile();
@@ -118,6 +103,21 @@ public class FileHandlerTest {
         expectedName = testFileName;
         currentName = instance.getFileName();
         assertEquals(expectedName, currentName);
+    }
+    
+    @Test
+    public void copyFile() {
+        String expectedName;
+
+        expectedName = "justATest.xml";
+        try {
+            instance.copyFile(testFileName, expectedName);
+        }
+        catch (IOException ioe) {
+            fail("Should not have raised a IO exception");
+        }
+        //Should probably delete file here as well... Never mind right now.
+        //Also check for file does not exists from beginning is missing...
     }
 
 }
