@@ -65,6 +65,14 @@ public class MovieMenuTest {
         instance.printMenu();
     }
     
-    
+    /**
+     * Test of printMenu method, of class MovieMenu.
+    */
+    @Test
+    public void testPrintMovieListForCustomer() {
+        System.out.println("printMovieListForCustomer");
+        MovieMenu instance = new MovieMenu(xmlFile);
+        instance.printMoveListForCustomer();
+    }
     
 }

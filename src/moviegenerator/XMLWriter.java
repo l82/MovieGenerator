@@ -69,7 +69,11 @@ public class XMLWriter {
             writer.writeCharacters(timeS);
             writer.writeEndElement();
             writer.writeStartElement("customer");
-            writer.writeCharacters(movie.getCustomer());
+            String customer = movie.getCustomer();
+            if (customer.contentEquals("")) {
+                customer = "-";
+            }
+            writer.writeCharacters(customer);
             writer.writeEndElement(); 
             writer.writeEndElement();
         }
