@@ -98,7 +98,7 @@ public class Movie {
     
     /**
      * Getter to get the customer who has rented the file
-     * @return The age
+     * @return The customer
      */
     public String getCustomer() {
         return customer;

@@ -137,4 +137,29 @@ public class MovieList {
         return myMovies.size();
     }
     
+     /** 
+     * Get a list of movies for a certain customer
+     * @param customer The customer to request data for
+     * @param format Format of the string
+     * 
+     * @return The string of movies
+     */
+    public String getMoviesForCustomer(String customer, String format) {
+        Movie movieToPrint;
+        String tmpCustomer;
+        String movieToString;
+        String concatMovieList;
+        concatMovieList = "";
+        
+        for (int i = 0; i < myMovies.size(); i++) {
+            movieToPrint = myMovies.get(i);
+            tmpCustomer = movieToPrint.getCustomer();
+            if (tmpCustomer.equals(customer)) {
+                movieToString = movieToPrint.printMovie((i + 1), format);
+                concatMovieList = concatMovieList + movieToString + "\n";
+            }
+        }
+        return concatMovieList;
+    }
+    
 }

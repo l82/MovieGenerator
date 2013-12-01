@@ -41,6 +41,7 @@ public class MovieMenu {
         System.out.println("3. Remove a Movie");
         System.out.println("4. Rent movie to a customer");
         System.out.println("5. Stop renting a movie");
+        System.out.println("6. List movies for a customer");
         System.out.println("----------------------------------");
         System.out.println("9. Exit");
         System.out.print("Enter your choice: ");
@@ -172,11 +173,12 @@ public class MovieMenu {
      * Prints header and all movies
      */
     private void printMovieList() {
-        String formatting = "%-10s%-40s%-30s%-30s%-10s%-10s%-20s";
+        String formatting;
+        
         System.out.println("Number of movies in list: " + 
                 myMovieList.getNumberOfMovies());
-        System.out.println(String.format(formatting, "Movie No", "Title", "Genre", 
-                "Director", "Min Age", "Time(min)", "Customer"));
+        printHeader();
+        formatting = getFormatting();
         System.out.println(myMovieList.movieListToString(formatting));
         printBackExitMenu();
     }
@@ -237,7 +239,7 @@ public class MovieMenu {
     private String askForCustomer() {
         String customer;
         
-        printString("Enter customer to rent movie: ");
+        printString("Enter customer: ");
         customer = getStringChoice();
         return customer;
     }
@@ -273,6 +275,37 @@ public class MovieMenu {
         printBackExitMenu();
     }
     
+    private String getFormatting() {
+        
+        return "%-10s%-40s%-30s%-30s%-10s%-10s%-20s";
+        
+    }
+    
+    private void printHeader() {
+        String formatting;
+        
+        formatting = getFormatting();
+        System.out.println(String.format(formatting, "Movie No", "Title", "Genre", 
+                "Director", "Min Age", "Time(min)", "Customer"));
+    }
+    
+    /**
+     * Ask for what customer to list movies for and list them
+     */
+    private void listMoviesForCustomer() {
+        String customer;
+        String listOfMovies;
+        String formatting;
+        formatting = getFormatting();
+        
+        customer = askForCustomer();
+        listOfMovies = myMovieList.getMoviesForCustomer(customer, formatting);
+        printHeader();
+        System.out.println(listOfMovies);
+        
+        printBackExitMenu();
+    }
+    
     /**
      * Shows the information for the menu item chosen
      * @param menuChoice The menu choice that the user has done
@@ -298,7 +331,7 @@ public class MovieMenu {
                 stopRentMovie();
                 break;
             case 6:
-                //listMoviesForCustomer();
+                listMoviesForCustomer();
                 break;
             case 9:
                 exitProgram();
